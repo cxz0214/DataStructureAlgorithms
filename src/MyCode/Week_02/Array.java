@@ -26,10 +26,10 @@ public class Array<T> {
      * @param index
      */
     public void add(int index,T element){
-        if (size == data.length)
-            throw new IllegalArgumentException("数组已满无法添加！");
         if(index < 0 || index > size)
             throw new IllegalArgumentException("参数错误，请检查数组下标的合法性");
+        if (size == data.length)
+            resize(2 * data.length);
         for(int i = size; i > index;i--){
             data[i] = data[i - 1];
         }
@@ -134,10 +134,12 @@ public class Array<T> {
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("参数错误，请输入合法的数组下标");
         T temp = data[index];
-        for(int i = index ; i < size;i++){
+        for(int i = index ; i < size - 1;i++){
             data[i] = data[i+1];
         }
         size--;
+        if(size == data.length/2)
+            resize(data.length/2);
         return temp;
     }
     /**
@@ -173,7 +175,7 @@ public class Array<T> {
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("size: "+size+" ");
+        builder.append(String.format("capacity: %d,size : %d ,",getCapacity(),getSize()));
         builder.append("data : [");
         for(int i = 0; i < size-1; i ++){
             builder.append(data[i]);
@@ -182,6 +184,13 @@ public class Array<T> {
         builder.append(data[size -1]);
         builder.append("]");
         return builder.toString();
+    }
+    private void resize(int newcapacity){
+        T[] arr = (T[])new Object[newcapacity];
+        for(int i = 0 ; i < size; i++){
+            arr[i] = this.data[i];
+        }
+        this.data = arr;
     }
 
 }

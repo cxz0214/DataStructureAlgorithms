@@ -2,7 +2,7 @@ package MyCode.Week_02;
 
 public class Test {
     public static void main(String[] args) {
-        Array<Student> students = new Array<>(100);
+        Array<Student> students = new Array<>(10);
         for (int i = 0; i < 10;i++){
             students.addLast(new Student("张"+i,i+1));
         }
@@ -23,6 +23,11 @@ public class Test {
         System.out.println(students.removeLast());
         System.out.println(students);
         students.set(3,new Student("加油",3));
+        System.out.println(students);
+        System.out.println(students.removeLast());
+        System.out.println(students.removeLast());
+        System.out.println(students.removeLast());
+        System.out.println(students.removeLast());
         System.out.println(students);
 
     }
