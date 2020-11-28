@@ -30,35 +30,30 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-//        int[] dataSize = {10000,100000};
-//        for(int n: dataSize){
-//            System.out.println("RandomArray");
-//            Integer[] arr = ArrayGenerator.GeneratorRandomArray(n,n );
-//            Integer[] arr2 = Arrays.copyOf(arr,arr.length);
-//            SortHelper.SortTest("InsertionSort",arr);
-//            SortHelper.SortTest("SelectionSort",arr2);
-//            System.out.println("OrderedArray:");
-//            Integer[] arr3 = ArrayGenerator.GeneratorOrderArray(n,0);
-//            Integer[] arr4 = Arrays.copyOf(arr3,arr3.length);
-//            SortHelper.SortTest("InsertionSort",arr);
-//            SortHelper.SortTest("SelectionSort",arr2);
-//
-//        }
-//        String str = "";
-//        System.out.println(str);
-//        String[] result = str.split(",");
-//        System.out.println(result.length);
-//        System.out.println(result[0].getClass());
-//        String[] arr = new String[0];
-//        System.out.println(arr.length);
-//        int[] arr1 = new int[0];
-//        System.out.println(arr1.length);
-        String[] arr = { "\0\0\0" };
-        String ar = "";
+        int[] dataSize = {10000,100000};
+        for(int n: dataSize){
+            System.out.println("RandomArray");
+            Integer[] arr = ArrayGenerator.GeneratorRandomArray(n,n );
+            Integer[] arr2 = Arrays.copyOf(arr,arr.length);
+            SortHelper.SortTest("InsertionSort",arr);
+            SortHelper.SortTest("SelectionSort",arr2);
+            System.out.println("OrderedArray:");
+            Integer[] arr3 = ArrayGenerator.GeneratorOrderArray(n,0);
+            Integer[] arr4 = Arrays.copyOf(arr3,arr3.length);
+            SortHelper.SortTest("InsertionSort",arr);
+            SortHelper.SortTest("SelectionSort",arr2);
 
-        System.out.println(Arrays.toString(arr));
-        System.out.println(arr[0]);
+        }
+        String str = "";
+        System.out.println(str);
+        String[] result = str.split(",");
+        System.out.println(result.length);
+        System.out.println(result[0].getClass());
+        String[] arr = new String[0];
         System.out.println(arr.length);
+        int[] arr1 = new int[0];
+        System.out.println(arr1.length);
+
 
     }
 }
