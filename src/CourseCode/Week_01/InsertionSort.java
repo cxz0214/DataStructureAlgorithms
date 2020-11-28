@@ -44,16 +44,6 @@ public class InsertionSort {
             SortHelper.SortTest("SelectionSort",arr2);
 
         }
-        String str = "";
-        System.out.println(str);
-        String[] result = str.split(",");
-        System.out.println(result.length);
-        System.out.println(result[0].getClass());
-        String[] arr = new String[0];
-        System.out.println(arr.length);
-        int[] arr1 = new int[0];
-        System.out.println(arr1.length);
-
 
     }
 }
