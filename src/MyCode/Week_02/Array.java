@@ -138,7 +138,7 @@ public class Array<T> {
             data[i] = data[i+1];
         }
         size--;
-        if(size == data.length/2)
+        if(size == data.length/4)  //防止复杂度震荡
             resize(data.length/2);
         return temp;
     }
