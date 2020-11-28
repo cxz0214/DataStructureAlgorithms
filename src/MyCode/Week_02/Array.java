@@ -25,7 +25,7 @@ public class Array<T> {
      * @param element
      * @param index
      */
-    void add(int index,T element){
+    public void add(int index,T element){
         if (size == data.length)
             throw new IllegalArgumentException("数组已满无法添加！");
         if(index < 0 || index > size)
@@ -41,14 +41,14 @@ public class Array<T> {
      * 在数组开始位置插入
      * @param element
      */
-    void addFirst(T element){
+    public void addFirst(T element){
         add(0,element);
     }
     /**
      * 在数组尾部插入
      * @param element
      */
-    void addLast(T element){
+    public void addLast(T element){
         add(size,element);
     }
     /**
@@ -56,7 +56,7 @@ public class Array<T> {
      * @param index
      * @param element
      */
-    void set(int index,T element){
+    public void set(int index,T element){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("参数错误，请检查数组下标的合法性");
         data[index] = element;
@@ -68,9 +68,9 @@ public class Array<T> {
      * @param element
      * @return
      */
-    boolean contains(T element){
-        for(T e: data){
-            if(element.ComparaTo(e) == 0)
+    public  boolean contains(T element){
+        for(T e : data){
+            if(element.equals(e))
                 return true;
         }
         return false;
@@ -81,9 +81,9 @@ public class Array<T> {
      * @param element
      * @return
      */
-    int find(T element){
+    public int find(T element){
         for(int i = 0; i < size ;i++){
-            if(data[i].ComparaTo(element) == 0){
+            if(data[i].equals(element)){
                 return i;
             }
         }
@@ -95,7 +95,7 @@ public class Array<T> {
      * @param index
      * @return
      */
-    T get(int index){
+    public T get(int index){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("参数错误，请输入合法的数组下标");
         return data[index];
@@ -105,7 +105,7 @@ public class Array<T> {
      * 返回数组的容量
      * @return
      */
-    int getCapacity(){
+    public int getCapacity(){
         return data.length;
     }
 
@@ -113,7 +113,7 @@ public class Array<T> {
      * 返回数组中的元素个数
      * @return
      */
-    int getSize(){
+    public int getSize(){
         return size;
     }
 
@@ -121,7 +121,7 @@ public class Array<T> {
      * 判断数组是否为空
      * @return
      */
-    boolean isEmpty(){
+    public boolean isEmpty(){
         return size == 0;
     }
 
@@ -130,7 +130,7 @@ public class Array<T> {
      * @param index
      * @return
      */
-    T remove(int index){
+    public T remove(int index){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("参数错误，请输入合法的数组下标");
         T temp = data[index];
@@ -140,6 +140,48 @@ public class Array<T> {
         size--;
         return temp;
     }
+    /**
+     * 删除数组中为element的元素，并返回其下标,若不存在则返回-1
+     * @param element
+     * @return
+     */
+    public int removeElement(T element){
+        for(int i = 0 ; i < size ;i ++){
+            if(data[i].equals(element)){
+                remove(i);
+                return i;
+            }
+        }
+        return -1;
+    }
 
+    /**
+     * 删除数组开始位置元素
+     * @return
+     */
+    public T removeFirst(){
+        return remove(0);
+    }
+
+    /**
+     * 删除数组中最后一个元素
+     * @return
+     */
+    public T removeLast(){
+        return remove(size -1);
+    }
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("size: "+size+" ");
+        builder.append("data : [");
+        for(int i = 0; i < size-1; i ++){
+            builder.append(data[i]);
+            builder.append(",");
+        }
+        builder.append(data[size -1]);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }
