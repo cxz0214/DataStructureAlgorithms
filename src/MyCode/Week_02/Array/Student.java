@@ -1,4 +1,4 @@
-package MyCode.Week_02;
+package MyCode.Week_02.Array;
 
 public class Student implements Comparable<Student>{
     private String name;

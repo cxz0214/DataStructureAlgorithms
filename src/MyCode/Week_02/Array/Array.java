@@ -1,4 +1,4 @@
-package MyCode.Week_02;
+package MyCode.Week_02.Array;
 
 public class Array<T> {
     private T[] data;
@@ -100,7 +100,12 @@ public class Array<T> {
             throw new IllegalArgumentException("参数错误，请输入合法的数组下标");
         return data[index];
     }
-
+    public T getLast(){
+        return get(size - 1);
+    }
+    public T getFirst(){
+        return get(0);
+    }
     /**
      * 返回数组的容量
      * @return

@@ -1,4 +1,7 @@
-package MyCode.Week_02;
+package MyCode.Week_02.Array;
+
+import MyCode.Week_02.Array.Array;
+import MyCode.Week_02.Array.Student;
 
 public class Test {
     public static void main(String[] args) {
