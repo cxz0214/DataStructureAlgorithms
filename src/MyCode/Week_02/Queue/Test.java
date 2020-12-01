@@ -26,26 +26,27 @@ public class Test {
 //        loopQueue.enqueue(20);
 //        loopQueue.enqueue(21);
 //        System.out.println(loopQueue);
-        ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
+        LoopDeque<Integer> loopDeque = new LoopDeque<>();
         for (int i = 0; i < 5; i++) {
-            arrayDeque.addFirst(i);
+            loopDeque.addFirst(i);
         }
+        System.out.println(loopDeque);
         for (int i = 5; i < 10; i++) {
-            arrayDeque.addLast(i);
+            loopDeque.addLast(i);
         }
-        System.out.println(arrayDeque);
+        System.out.println(loopDeque);
         int i = 0;
         while(i < 5){
-            arrayDeque.removeLast();
+            loopDeque.removeLast();
             i++;
         }
-        System.out.println(arrayDeque);
+        System.out.println(loopDeque);
         int j = 0;
         while(j < 3){
-            arrayDeque.removeFirst();
+            loopDeque.removeFirst();
             j++;
         }
-        System.out.println(arrayDeque);
+        System.out.println(loopDeque);
 
     }
 }

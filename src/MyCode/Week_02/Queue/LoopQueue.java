@@ -11,9 +11,7 @@ public class LoopQueue<E> implements Queue<E> {
         size = 0;
     }
     public LoopQueue(){
-        array = (E[])new Object[10];
-        front = tail = 0;
-        size = 0;
+        this(10);
     }
 
     /**
